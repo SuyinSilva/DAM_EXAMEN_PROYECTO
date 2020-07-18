@@ -1,3 +1,3 @@
 <% 
-response.sendRedirect("./rest/servicios/marca");
+response.sendRedirect("./rest/servicios/pedido");
 %>

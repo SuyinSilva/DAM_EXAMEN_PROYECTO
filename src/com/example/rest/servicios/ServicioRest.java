@@ -15,8 +15,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.example.rest.dao.MarcaModel;
-
+import com.example.rest.dao.PedidoModel;
 import com.example.rest.entidades.Marca;
+import com.example.rest.entidades.Pedido;
 
 @Path("/servicios")
 @Produces({ MediaType.APPLICATION_JSON })
@@ -25,7 +26,7 @@ public class ServicioRest {
 	private static final Log log = LogFactory.getLog(ServicioRest.class);
 
 	private MarcaModel daoMarca = new MarcaModel();
-
+	private PedidoModel daoPedido=new PedidoModel();
 
 	// Crud de Marca
 	@GET
@@ -64,7 +65,22 @@ public class ServicioRest {
 		else
 			return Response.notModified().build();
 	}
+	@GET
+	@Path("/pedido")
+	public Response listarPedidoTodos() {
+		log.info("listars Pedido rest ");
+		return Response.ok(daoPedido.listarPedidoTodos()).build();
+	}
 
+	@POST
+	@Path("/pedido")
+	public Response registraPedido(Pedido obj) {
+		log.info("Registra Pedido " + obj.getIdPedido());
+		if (daoPedido.insertaPedido(obj) > 0)
+			return Response.ok().build();
+		else
+			return Response.notModified().build();
+	}
 
 
 }
