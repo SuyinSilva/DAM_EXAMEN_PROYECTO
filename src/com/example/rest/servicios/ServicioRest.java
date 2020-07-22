@@ -69,14 +69,19 @@ public class ServicioRest {
 	@Path("/pedido")
 	public Response listarPedidoTodos() {
 		log.info("listars Pedido rest ");
-		return Response.ok(daoPedido.listarPedidoTodos()).build();
+		return Response.ok(daoPedido.listaPedido()).build();
 	}
-
+	@GET
+	@Path("/pedido/{idCliente}")
+	public Response listaPedidoPorCliente(int idCliente) {
+		log.info("listars Pedido Por Cliente rest ");
+		return Response.ok(daoPedido.listaPedidoporCliente(idCliente)).build();
+	}
 	@POST
 	@Path("/pedido")
 	public Response registraPedido(Pedido obj) {
 		log.info("Registra Pedido " + obj.getIdPedido());
-		if (daoPedido.insertaPedido(obj) > 0)
+		if (daoPedido.inserta(obj) > 0)
 			return Response.ok().build();
 		else
 			return Response.notModified().build();

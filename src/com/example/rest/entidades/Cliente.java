@@ -1,12 +1,13 @@
 package com.example.rest.entidades;
 
+
 public class Cliente {
+
 	private int idCliente;
 	private String nombres;
 	private String apellidos;
 	private String dni;
 	private String correo;
-	private String fechaRegistro;
 	private String login;
 	private String password;
 	private String direccion;
@@ -42,12 +43,6 @@ public class Cliente {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public String getFechaRegistro() {
-		return fechaRegistro;
-	}
-	public void setFechaRegistro(String fechaRegistro) {
-		this.fechaRegistro = fechaRegistro;
-	}
 	public String getLogin() {
 		return login;
 	}
@@ -78,5 +73,4 @@ public class Cliente {
 	public void setUbigeo(Ubigeo ubigeo) {
 		this.ubigeo = ubigeo;
 	}
-	 
 }

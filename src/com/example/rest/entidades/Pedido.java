@@ -1,37 +1,42 @@
 package com.example.rest.entidades;
 
+import java.sql.Date;
+import java.util.ArrayList;
+
 public class Pedido {
+
 	private int idPedido;
-	private String fechaRegistro;
-	private String fechaEntrega;
-	private String lugar;
+	private Date fechaRegistro;
+	private Date fechaEntrega;
+	private String lugarEntrega;
 	private String estado;
 	private Cliente cliente;
-	private Ubigeo  ubigeo;
-	
+	private Ubigeo ubigeo;
+	private Usuario usuario;
+	private ArrayList<PedidoDetalle> detalles;
 	public int getIdPedido() {
 		return idPedido;
 	}
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
-	public String getFechaRegistro() {
+	public Date getFechaRegistro() {
 		return fechaRegistro;
 	}
-	public void setFechaRegistro(String fechaRegistro) {
+	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
-	public String getFechaEntrega() {
+	public Date getFechaEntrega() {
 		return fechaEntrega;
 	}
-	public void setFechaEntrega(String fechaEntrega) {
+	public void setFechaEntrega(Date fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
-	public String getLugar() {
-		return lugar;
+	public String getLugarEntrega() {
+		return lugarEntrega;
 	}
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
+	public void setLugarEntrega(String lugarEntrega) {
+		this.lugarEntrega = lugarEntrega;
 	}
 	public String getEstado() {
 		return estado;
@@ -51,5 +56,18 @@ public class Pedido {
 	public void setUbigeo(Ubigeo ubigeo) {
 		this.ubigeo = ubigeo;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	public ArrayList<PedidoDetalle> getDetalles() {
+		return detalles;
+	}
+	public void setDetalles(ArrayList<PedidoDetalle> detalles) {
+		this.detalles = detalles;
+	}
+	
 	
 }
